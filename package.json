@@ -1,0 +1,48 @@
+{
+  "name": "bem-react-component-creator",
+  "version": "1.0.0",
+  "description": "Helpers to create BEM like React components",
+  "main": "build/index.js",
+  "scripts": {
+    "dev": "watch 'npm run build' src",
+    "build": "babel src -d build",
+    "test": "jest --env=jsdom --no-watchman",
+    "test-watch": "npm test -- --watch",
+    "release": "np"
+  },
+  "babel": {
+    "presets": [
+      "latest",
+      "react",
+      "es2015"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xvicmanx/bem-react-component-creator.git"
+  },
+  "keywords": [
+    "BEM",
+    "React"
+  ],
+  "author": "Victor Trejo",
+  "license": "ISC",
+  "dependencies": {
+    "prop-types": "^15.6.0",
+    "react": "^16.2.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-latest": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "jest": "^21.2.1",
+    "np": "^2.18.2",
+    "react-test-renderer": "^16.2.0",
+    "watch": "^1.0.2"
+  },
+  "bugs": {
+    "url": "https://github.com/xvicmanx/bem-react-component-creator/issues"
+  },
+  "homepage": "https://github.com/xvicmanx/bem-react-component-creator#readme"
+}
