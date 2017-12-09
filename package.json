@@ -1,6 +1,6 @@
 {
   "name": "bem-react-component-creator",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Helpers to create BEM like React components",
   "main": "build/index.js",
   "scripts": {
