@@ -14,9 +14,13 @@ import BemComponentsCreator from 'bem-react-component-creator';
 
 const PostBEM = BemComponentsCreator('post');
 const Post = PostBEM.block('div');
+const Button = (props) => {
+  return <button {...props}>{props.children}</button>
+};
 const Picture = PostBEM.element('img', 'picture');
 const Title = PostBEM.element('h2', 'title', 'awesome', 'large');
 const Phrase = PostBEM.element('p', 'phrase');
+const ShareButton = PostBEM.element(Button, 'share-button', 'success');
   
 ReactDOM.render(
   <Post>
@@ -31,6 +35,9 @@ ReactDOM.render(
       <Phrase modifiers="emphasized,colorful">
           An awesome phrase
       </Phrase>
+      <ShareButton>
+        Share!
+      </ShareButton>
   </Post>,
   document.getElementById('root')
 );
@@ -58,6 +65,9 @@ It will render
     >
       An awesome phrase
     </p>
+    <button class="post__share-button post__share-button--success">
+      Share!
+    </button>
   </div>
 
 ```
