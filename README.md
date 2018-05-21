@@ -1,11 +1,11 @@
 # BEM React component creator
 Helpers to create BEM like React components/
-## Example
+## Examples
 
 ```shell 
 $ npm install bem-react-component-creator --save
 ```
-
+### Example 1
 ```javascript
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -72,3 +72,55 @@ It will render
 
 ```
 
+### Example 2
+Putting the BEM wrappers in a different file and exporting them as a single component.
+
+```js
+// Post.js
+
+import bcc from 'bem-react-component-creator';
+const Button = (props) => {
+  return <button {...props}>{props.children}</button>
+};
+const { block, element } = bcc('post');
+
+const Post = block('div');
+Post.Picture = element('img', 'picture');
+Post.Title = element('h2', 'title', 'awesome', 'large');
+Post.Phrase = element('p', 'phrase');
+Post.ShareButton = element(Button, 'share-button', 'success');
+
+export default Post;
+
+```
+
+
+```javascript
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+import Post from './Post';
+  
+ReactDOM.render(
+  <Post>
+      <Post.Picture
+          src="https://http://via.placeholder.com/50x50"
+          alt="Post illustration"
+      />
+      <Post.Title>Test title</Post.Title>
+      <Post.Phrase>
+          An awesome phrase
+      </Post.Phrase>
+      <Post.Phrase modifiers="emphasized,colorful">
+          An awesome phrase
+      </Post.Phrase>
+      <Post.ShareButton>
+        Share!
+      </Post.ShareButton>
+  </Post>,
+  document.getElementById('root')
+);
+
+```
+
+This will get the same result as the previous example.
