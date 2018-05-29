@@ -6,6 +6,7 @@ Helpers to create BEM like React components/
 $ npm install bem-react-component-creator --save
 ```
 ### Example 1
+[In Code Sandbox](https://codesandbox.io/s/yqnqrqzwz)
 ```javascript
 import React from 'react';
 import ReactDOM from 'react-dom';
